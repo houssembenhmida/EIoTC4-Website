@@ -1,0 +1,1057 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7]>
+<html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="no-js ie8"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Eniso IoT Challenge 4 </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+
+    <!-- Bootstrap 3.3.2 -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/js/rs-plugin/css/settings.css">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+
+
+        .thumbnail {
+            position: relative;
+            width: 200px;
+            height: 150px;
+        }
+
+        .caption {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgb(207, 223, 226);
+            width: 200px;
+            height: 150px;
+            padding: 2%;
+            display: none;
+            text-align: center;
+            color: #fff !important;
+            z-index: 2;
+        }
+
+        #clockdiv {
+            font-family: sans-serif;
+            color: #2072B8;
+            display: inline;
+            position: absolute;
+            top: 50%;
+            left: 3%;
+            font-weight: 100;
+            text-align: justify;
+            width: 50%;
+            /*margin-top: 50%;*/
+            font-size: 30px;
+            /*background-color: rgba(153, 153, 153, 0.35);*/
+
+        }
+
+        #clockdiv > div {
+            padding: 20px;
+            border-radius: 3px;
+            background: rgb(211, 213, 216);
+            display: inline-block;
+
+        }
+
+        #clockdiv div > span {
+            padding: 28px;
+            border-radius: 3px;
+            background: rgb(44, 62, 80);
+            display: inline-block;
+            font-size: 30px;
+        }
+
+        #clockdiv h1 {
+            font-size: 35px;
+            text-align: justify;
+        }
+
+        .smalltext {
+            padding-top: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /*@media only screen and (max-device-width: 480px) {*/
+        @media only screen and (max-width: 480px) {
+            #clockdiv {
+                width: 90%;
+                top: 75%;
+                left: 10%
+            }
+
+            #clockdiv > div {
+                width: 20%;
+                padding: 10px;
+                display: inline-block;
+            }
+
+            #clockdiv div > span {
+                padding: 15px;
+                font-size: 15px;
+                display: inline-block;
+                text-align: center;
+            }
+
+            #clockdiv h1 {
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .smalltext {
+                padding-top: 5px;
+                font-size: 9px;
+                text-align: center;
+            }
+        }
+
+        /*@media screen and (min-device-width: 481px) and (max-device-width: 768px) {*/
+        @media screen and (min-width: 481px) and (max-width: 780px) {
+            #clockdiv {
+                width: 85%;
+                top: 80%;
+                left: 20%
+            }
+
+            #clockdiv > div {
+                width: 20%;
+                padding: 10px;
+                display: inline-block;
+
+            }
+
+            #clockdiv div > span {
+                padding: 25px;
+                width: 100%;
+                font-size: 20px;
+                display: inline-block;
+                text-align: center;
+
+            }
+
+            #clockdiv h1 {
+                font-size: 25px;
+                text-align: justify;
+            }
+
+            .smalltext {
+                padding-top: 5px;
+                font-size: 13px;
+                text-align: center;
+            }
+        }
+
+
+        @media screen and (min-width: 781px) and (max-width: 1100px) {
+            #clockdiv {
+                width: 85%;
+                top: 50%;
+                left: 30%;
+
+            }
+
+            #clockdiv > div {
+                width: 12%;
+                padding: 10px;
+                display: inline-block;
+                background: rgb(211, 213, 216);
+            }
+
+            #clockdiv div > span {
+                padding: 10px;
+                width: 100%;
+                font-size: 30px;
+                display: inline-block;
+                text-align: center;
+                background: rgb(44, 62, 80);
+            }
+
+            #clockdiv h1 {
+                font-size: 30px;
+                text-align: justify;
+            }
+
+            .smalltext {
+                padding-top: 3px;
+                font-size: 15px;
+                text-align: center;
+            }
+        }
+
+        /*}*/
+    </style>
+
+
+    <script type="text/javascript" src="assets/js/modernizr.custom.32033.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+
+<div class="pre-loader">
+    <div class="load-con">
+        <img src="assets/img/freeze/iot.png" class="animated fadeInDown" alt="">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+</div>
+
+<header>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="fa fa-bars fa-lg"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/freeze/iot.png" height="140" width="140" alt="" class="logo">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <strong>EIoTC </strong>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="background-color:#f2f2f2;">
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#features">EIoTC'4</a></li>
+                                <li><a href="#timeline">Timeline</a></li>
+                                <!--<li><a href="#program">Schedule</a></li>-->
+                            </ul>
+                        </div>
+                    </li>
+                    </li>
+                    <!--<li><a href="#timeline">Timeline</a>-->
+                    <!--<button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">-->
+                    <!--<strong>SPONSORS </strong>-->
+                    <!--<span class="caret"></span>-->
+                    <!--</button>-->
+                    <li><a onclick="myFunction()"><strong>APPLY</strong></a>
+
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <strong>NEWS </strong>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style="background-color:#f2f2f2;">
+                                <!--<li><a href="#getApp">Get App</a></li>-->
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="#reviews">Testimonials</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#screens"><strong>SPONSORS</strong></a>
+                    <li><a href="#support"><strong>CONTACT </strong></a>
+                    </li>
+                    <!--</li>-->
+                    <!--<li><a href="gallery.html">Gallery</a>-->
+                    <!--</li>-->
+
+
+                    <!--<li><a href="#screens">Sponsors</a>-->
+                    <!--</li>-->
+
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-->
+    </nav>
+
+
+    <!--RevSlider-->
+    <div class="tp-banner-container scrollpoint sp-effect3 ">
+
+        <div class="tp-banner">
+           <!-- <ul>
+                <div id="clockdiv">
+                    <h1>Opening Ceremony in</h1>-->
+                    <!--<h1 style="font-family: '3x5';">Countdown to the event</h1>-->
+                    <!--<h1 style="font-family: '3x5';">Subscription deadline</h1>-->
+                  <!--  <div>
+                        <span class="days" style="font-family: '3x5';"></span>
+                        <div class="smalltext" style="font-family: '3x5';"><strong>Days</strong></div>
+                    </div>
+                    <div>
+                        <span class="hours" style="font-family: '3x5';"></span>
+                        <div class="smalltext" style="font-family: '3x5';" ><strong>Hours</strong></div>
+                    </div>
+                    <div>
+                        <span class="minutes" style="font-family: '3x5';"></span>
+                        <div class="smalltext" style="font-family: '3x5';"><strong>Minutes</strong></div>
+                    </div>
+                    <div>
+                        <span class="seconds" style="font-family: '3x5';"></span>
+                        <div class="smalltext" style="font-family: '3x5';"><strong>Seconds</strong></div>
+                    </div>
+                </div>
+            </ul> -->
+
+        </div>
+    </div>
+
+
+</header>
+
+
+<div class="wrapper">
+
+
+    <section id="about">
+        <div class="container">
+
+            <div class="section-heading scrollpoint sp-effect3">
+                <h1 style="font-family: '3x5';">About us</h1>
+                <div class="divider"></div>
+                <H3>About the Challenge</H3>
+                </br>
+                <p style="text-align: justify; font-size: medium">
+                    The rapid advancement and ubiquitous penetration of IoT in today's world can't but impel us to
+                    learn
+                    more about it and explore the potential of its industry.</br>
+
+                    As we firmly believe that IoT will continue to grow by leaps and bounds, we have put together
+                    initiatives such as the <strong> ENISo IoT Challenge </strong> in an attempt to be in the front line
+                    of this evolving
+                    technology.</br>
+                    <strong> ENISo IoT Challenge </strong> is the leading national event that brings together
+                    engineering students from
+                    across Tunisia to compete and come up with a prototype exploiting IoT concepts.
+                    The concept of the Challenge is very special and It paves a way for a great multi-disciplinary
+                    collaboration.</br>
+                    Teams are made of 6 members. However, these members should equally belong to 3 different engineering
+                    majors or options.
+                    For instance, a team could be the formation of Electronics, Mechanics and Textile engineering
+                    students.</br>
+                    Teams work for consecutive 48 hours to come up with an innovative prototype using IoT concepts. The
+                    prototype should also follow the instructions and guidelines of the competition theme.
+                    Students from any engineering school across Tunisia are welcome to apply.
+                    </br>
+                </p>
+                <H3>About the Conference</H3>
+                </br>
+                <p style="text-align: justify; font-size: medium">
+                    ENISo IoT Conference is an annual conference that takes place at the National Engineering School of
+                    Sousse.
+
+                    Launched in Spring 2016, It aims to gather professionals , specialists, key industries and
+                    engineering
+                    students to discuss and explore the latest innovations within the Internet of Things.
+
+                    The event is not to be missed as it is expected to host more than a thousand attendee. Attendees
+                    might
+                    also include IT decision makers, developers, government officials, university Academia and many
+                    more.
+
+                    Traditionnally starting before the ENISo IoT Challenge, This conference marks the start of the
+                    challenge and its openening ceremony. It's also a great opportunity for attendees to experience a
+                    day
+                    of discussions, exploration, hands-on workshops and high level networking.
+
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="about-item scrollpoint sp-effect2">
+                        <i class="fa fa fa-trophy fa-2x"></i>
+                        <h3>Freebies and prizes</h3>
+                        <p>We have awesome prizes for the winners,the kind of prizes that will make you apply massively
+                            to this competition. Get ready! fun things are coming your way</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="about-item scrollpoint sp-effect5">
+                        <i class="fa fa-users fa-2x"></i>
+                        <h3>Participating teams</h3>
+                        <p> We will choose 10 teams representing engineering schools from different parts of Tunisia.
+                            Teams must encompass 6 members with 3 engineering fields or options.</p>
+                    </div>
+                </div>
+             <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="about-item scrollpoint sp-effect5">
+                        <i class="fa fa-mobile fa-2x"></i>
+                        <h3>Get the App</h3>
+                        <p>Want to keep abreast of every single detail about the challenge ? GREAT , we're launching an
+                            android app that will just give you all what you need</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="about-item scrollpoint sp-effect1">
+                        <i class="fa fa-calendar fa-2x"></i>
+                        <h3>Application Deadlines</h3>
+                        <p>You can apply on this website till the 24th of February 2019. Please don't forget to include
+                            the 6 CVs of your team members. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="timeline">
+        <div class="container">
+            <div class="section-timeline scrollpoint sp-effect3">
+                <h1 style="font-family: '3x5';">Timeline</h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <div class="section-heading scrollpoint sp-effect3">
+                <h1 style="font-family: '3x5';">EIoTC'4</h1>
+                <div class="divider"></div>
+                <p>All what you need to know .. </p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 scrollpoint sp-effect1">
+                    <div class="media text-right feature">
+                        <a class="pull-right">
+                            <i class="fa fa-cogs fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">Call for speakers</h3>
+                            The call for speakers is ON.
+                            Please get in touch with us at
+                            <strong>eniso.iot.challenge@gmail.com </strong>
+
+
+                        </div>
+                    </div>
+                    <div class="media text-right feature">
+                        <a class="pull-right" href="apply.html">
+                            <i class="fa fa-code fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">48h Challenge</h3>
+                            The deadline to apply is on the 24th of February, so hurry up and apply!
+                        </div>
+                    </div>
+                    <div class="media text-right feature">
+                        <a class="pull-right" href="#about">
+                            <i class="fa fa-exchange fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">Conference</h3>
+                            Save your seat and come discover some interesting discussions about IoT
+                        </div>
+                    </div>
+                    <div class="media text-right feature">
+                        <a class="pull-right" href="https://www.facebook.com/enisoiotchallenge/" target="_blank">
+                            <i class="fa fa-comments fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">Social Media</h3>
+                            Follow us and keep an eye on our news.
+                        </div>
+                    </div>
+                    <div class="media text-right feature">
+                        <a class="pull-right" href="#timeline">
+                            <i class="fa fa-calendar fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">Timeline</h3>
+                            Mark your calendars, these are the most important dates.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <img src="assets/img/freeze/woman.png" class="img-responsive scrollpoint sp-effect5" alt="">
+                </div>
+                <div class="col-md-4 col-sm-4 scrollpoint sp-effect2">
+                    <div class="media feature">
+                        <a class="pull-left" href="#getMap">
+                            <i class="fa fa-map-marker fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">ENISo</h3>
+                            Check the place where the conference and the competition will be at.
+                        </div>
+                    </div>
+                    <div class="media feature">
+                        <a class="pull-left" href="https://www.youtube.com/channel/UCMfqYQwowPWyGoxg911AscA"
+                           target="_blank">
+                            <i class="fa fa-film fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">Videos and Teasers</h3>
+                            A small overview of the ENISo IoT Spirit !
+                        </div>
+                    </div>
+                    <div class="media feature">
+                        <a class="pull-left" href="apply.html" target="_blank">
+                            <i class="fa fa-compass fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">Directions and guidelines</h3>
+                            Directions that will guide you through your application.
+                        </div>
+                    </div>
+                    <div class="media feature">
+                        <a class="pull-left" href="gallery.html" target="_blank">
+                            <i class="fa fa-picture-o fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">Gallery</h3>
+                            Check all of these amazing pictures about last year's edition.
+                        </div>
+                    </div>
+                    <div class="media active feature">
+                        <a class="pull-left" href="#support">
+                            <i class="fa fa-plus fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">And much more!</h3>
+                            Contact us for your questions and inquiries.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--<section id="getApp">-->
+    <!--<div class="container-fluid">-->
+
+    <!--<div class="section-heading inverse scrollpoint sp-effect3">-->
+    <!--<h1>Get App</h1>-->
+    <!--<div class="divider"></div>-->
+    <!--<p>Download our app to be able to register for our workshops </br>and receive updates about the-->
+    <!--competition!</p>-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+    <!--<div class="col-md-12">-->
+    <!--<div class="hanging-phone scrollpoint sp-effect2 hidden-xs">-->
+    <!--<img src="assets/img/freeze/phone.png" alt="">-->
+    <!--</div>-->
+    <!--<div class="platforms">-->
+    <!--&lt;!&ndash;<a href="#" class="btn btn-primary inverse scrollpoint sp-effect1">&ndash;&gt;-->
+    <!--<button onclick="myFunction()" class="btn btn-primary inverse scrollpoint sp-effect1">-->
+    <!--<i class="fa fa-android fa-3x pull-left"></i>-->
+    <!--<span>Download for</span><br>-->
+    <!--<b>Android</b>-->
+    <!--</button>-->
+    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+
+    <!--</div>-->
+
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</section>-->
+
+
+    <section id="reviews">
+        <div class="container">
+            <div class="section-heading inverse scrollpoint sp-effect3">
+                <h1 style="font-family: '3x5';">Reviews</h1>
+                <div class="divider"></div>
+                <p>Read what they said about us</p>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-md-push-1 scrollpoint sp-effect3">
+                    <div class="review-filtering">
+                        <div class="review">
+                            <!--<div class="row">-->
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2">
+                                <div class="review-person">
+                                    <img src="assets/img/freeze/Taha.jpg" alt="" class="img-circle"  style=" height: 120px; width: 120px; ">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-9">
+                                <div class="review-comment">
+                                    <h4>“48H. C'est le temps qu'il aura fallu pour passer d'une simple compétition
+                                        estudiantine intéressante à un événement marquant et révélateur. Des élèves qui
+                                        ne se connaissaient pas ou très peu formaient des équipes hétérogènes et
+                                        multidisciplinaires pour concourir sur un thème bien loin de leurs spécialités
+                                        pour proposer des solutions innovantes et réalisables dans un contexte futuriste
+                                        : l'Internet des Objets. Cela m'a rappelé l'essence et la définition même du mot
+                                        "ingénieur". Voilà comment j'ai vécu cette première édition de "ENISo Internet
+                                        of Things Challenge". Pour un instant je commence à regretter de n'avoir pas pu
+                                        organiser cette compétition plutôt puis je me rappelle que l'équipe
+                                        organisatrice ad-hoc (enseignants, industriels et élèves ingénieurs) qui s'était
+                                        formée était tellement exceptionnelle que tout le métrite d'une réussite totale
+                                        lui revient : d'excellente idées surgissent, un panel de jury de très haut
+                                        niveau, des lauréats invités à continuer leur aventure dans des compétitions
+                                        internationales et surtout, et plus que tout, une synergie nouvelle entre les
+                                        élèves et les différents départements.
+                                        Bravo à toute l'équipe, je suis fier d'avoir un jour fait partie de cette équipe
+                                        et fier aussi que le département « informatique industrielle » soit fédérateur
+                                        et initiateur de cette première édition. Je sais que les éditions prochaines ne
+                                        seront que meilleures.”</h4>
+                                    <p>
+                                        - Taha BEN SALAH, Directeur du Département Informatique Indus, ENISo
+                                        <span>
+                                                 <i class="fa fa-star fa-lg"></i>
+                                                 <i class="fa fa-star fa-lg"></i>
+                                                 <i class="fa fa-star fa-lg"></i>
+                                                 <i class="fa fa-star fa-lg"></i>
+                                                 <i class="fa fa-star-o fa-lg"></i>
+                                             </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <!--</div>-->
+                        </div>
+                        <div class="review rollitin">
+                            <!--<div class="row">-->
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2">
+                                <div class="review-person">
+                                    <img src="assets/img/freeze/yaslaman.jpg" alt="" class="img-circle"  style=" height: 120px; width: 120px; ">
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="review-comment">
+                                    <h4>“La première version de l'ENISo IoT challenge fut un évènement marqué par une
+                                        organisation exceptionnelle en un temps très court et un esprit d'invention
+                                        extrêmement riche.
+                                        L'équipe organisation a montré de merveilleuses qualités de communication, de
+                                        gestion de l'espace-temps et surtout de la contrainte et du stress. L'ENISo a
+                                        été un formidable et agréable espace pour accueillir cet évènement. Et sans
+                                        oublié les importantes qualités inventives des équipes. Une recherche d'idées
+                                        fort intéressante avec considération de tous les aspects pour réussir un projet
+                                        : de l'idée au business en passant par la techno.
+                                        L'ENISo IoT Challenge est un concentré d'idées, de motivation et de qualités
+                                        humaines.
+                                        J'y reviendrai avec énergie pour participer et contribuer aux futures versions
+                                        et y vivre un esprit unique et exceptionnel.”</h4>
+                                    <p>
+                                        -Bilal Manai, Yaslamen CEO
+                                        <span>
+                                                 <i class="fa fa-star fa-lg"></i>
+                                                 <i class="fa fa-star fa-lg"></i>
+                                                 <i class="fa fa-star fa-lg"></i>
+                                                 <i class="fa fa-star-half-o fa-lg"></i>
+                                                 <i class="fa fa-star-o fa-lg"></i>
+                                             </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <!--</div>-->
+                        </div>
+                        <div class="review rollitin">
+                            <!--<div class="row">-->
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2">
+                                <div class="review-person ">
+                                    <img src="assets/img/freeze/MrZ.jpg" alt="" class="img-circle"  style=" height: 120px; width: 120px; ">
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="review-comment">
+                                    <h4>“Internet Of Things, Big Data, Cibersecurité, trois axes qui impacteraient 15%
+                                        de l'économie du monde d'ici 2020. Les acteurs du marché de ces nouvelles
+                                        technologies sont pertinemment conscients que la valeur de ces informations et
+                                        les données de ces objets connectés vient de leur identification, traitement et
+                                        de leur exploitation.
+                                        Beaucoup de sociétés anticipent sur les années qui viennent et développent les
+                                        infrastructures réseaux qui vont permettre cet hyper-interfaçage et ces ultra
+                                        connections qui vont assurer la connexion de tout à tout. La gestion du trafic
+                                        SMS en passant par les scénarios des services allant jusqu'à la géolocalisation
+                                        et interactivité, représente également les défis que beaucoup d'industriels
+                                        cherchent à relever.
+                                        Afin d'apporter des éléments de réponse et de jouer un rôle participatif dans
+                                        ces recherches de très haut niveau, nos jeunes élèves ingénieurs s'insèrent
+                                        dorés et déjà dans ces logiques de développement et adhèrent à ces tendances à
+                                        travers leur multiple activités au sein de l'école et notamment dans le cadre de
+                                        l'ENISo IoT Challenge.
+                                        Par ces différentes compétitions et concours, nos jeunes démontrent un savoir
+                                        faire indéniable et font valoir des compétences incontournables favorables à
+                                        leur positionnement sur le marché de l'emploi.”</h4>
+                                    <p>
+                                        - Zoubeir Turki, Directeur de la rénovation universitaire au ministère de
+                                        l'enseignement supérieur
+                                        <span>
+                                                 <i class="fa fa-star fa-lg"></i>
+                                                 <i class="fa fa-star fa-lg"></i>
+                                                 <i class="fa fa-star fa-lg"></i>
+                                                 <i class="fa fa-star-half-o fa-lg"></i>
+                                                 <i class="fa fa-star-o fa-lg"></i>
+                                             </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="screens">
+        <div class="container">
+
+            <div class="section-heading scrollpoint sp-effect3">
+                <h1 style="font-family: '3x5';">Sponsors</h1>
+                <div class="divider"></div>
+                <p>ENISo IoT Challenge is made possible thanks to ..</p>
+            </div>
+            <div class="row">
+                <!--<div class="col-md-3">-->
+                    <!--<div class="thumbnail">-->
+                        <!--<div class="caption">-->
+                            <!--<h4>Official Partner</h4>-->
+                        <!--</div>-->
+                        <!--<img src="assets/img/sponsors/yaslamen.png" alt="..." position="relative" width="200"-->
+                             <!--height="200">-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>Official Partner</h4>
+                        </div>
+                        <img src="assets/img/sponsors/sofia.png" alt="..." width="200"
+                             height="200">
+                    </div>
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>partner</h4>
+                        </div>
+                        <img src="assets/img/sponsors/4c.png" alt="..." width="140"
+                        height="200">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>partner</h4>
+                        </div>
+                        <img alt="..." height="200" src="assets/img/sponsors/TATMM.png"
+                             width="180">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>partner</h4>
+                        </div>
+                        <img src="assets/img/sponsors/logo_4c_mes.png" alt="..." width="140"
+                             height="140">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>partner</h4>
+                        </div>
+                        <img src="assets/img/sponsors/noccs.png" alt="..." width="140"
+                             height="140">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>sponsor</h4>
+                        </div>
+                        <img src="assets/img/sponsors/Harvest.png" alt="..." width="200"
+                              height="200">
+                    </div>
+                </div>
+    <div class="col-md-3">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>sponsor</h4>
+                        </div>
+                        <img src="assets/img/sponsors/proxym.png" alt="..." width="200"
+                              height="200">
+                    </div>
+                </div>
+    <div class="col-md-3">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>sponsor</h4>
+                        </div>
+                        <img src="assets/img/sponsors/Sfbt.png" alt="..." width="200"
+                              height="200">
+                    </div>
+                </div>
+    <div class="col-md-3">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>sponsor</h4>
+                        </div>
+                        <img src="assets/img/sponsors/natilait.png" alt="..." width="200"
+                              height="200">
+                    </div>
+                </div>
+
+    <div class="col-md-3">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>sponsor</h4>
+                        </div>
+                        <img src="assets/img/sponsors/tijen.png" alt="..." width="200"
+                              height="200">
+                    </div>
+                </div>
+
+                <!--<div class="col-md-3">-->
+                    <!--<div class="thumbnail">-->
+                        <!--<div class="caption">-->
+                            <!--<h4>Sponsor</h4>-->
+                        <!--</div>-->
+                        <!--<img src="assets/img/sponsors/Nescafee.png" alt="..." width="140" height="140">-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="col-md-3">-->
+                    <!--<div class="thumbnail">-->
+                        <!--<div class="caption">-->
+                            <!--<h4>Sponsor</h4>-->
+                        <!--</div>-->
+                        <!--<img src="assets/img/sponsors/trio.jpg" alt="...">-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="col-md-3">-->
+                    <!--<div class="thumbnail">-->
+                        <!--<div class="caption">-->
+                            <!--<h4>Sponsor</h4>-->
+                        <!--</div>-->
+                        <!--<img src="assets/img/sponsors/cola.png" align="center" width="140" height="140">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-3">-->
+                    <!--<div class="thumbnail">-->
+                        <!--<div class="caption">-->
+                            <!--<h4>Sponsor</h4>-->
+                        <!--</div>-->
+                        <!--<img src="assets/img/sponsors/Stil.jpg" alt="..." width="130" height="130">-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+            </div>
+        </div>
+    </section>
+    <section id="support" class="doublediagonal">
+        <div class="container">
+            <div class="section-heading scrollpoint sp-effect3">
+                <h1 style="font-family: '3x5';">Contact</h1>
+                <div class="divider"></div>
+                <p>For more info and support, contact us!</p>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
+                            <form role="form" action="mail.php" method="POST">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your name" name="name"
+                                           required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your email" name="email"
+                                           required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea cols="30" rows="10" class="form-control" name="message"
+                                              placeholder="Your message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            </form>
+                        </div>
+                        <div class="col-md-4 col-sm-4 contact-details scrollpoint sp-effect2">
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-map-marker fa-2x"></i>
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">National Engineering School of Sousse, Erriadh 4023,
+                                        Tunisia.</h4>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-envelope fa-2x"></i>
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                        <a href="mailto:eniso.iot.challenge@gmail.com">eniso.iot.challenge@gmail.com</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-phone fa-2x"></i>
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">+216 73 369 500</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="getMap">
+        <div class="container-fluid">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25882.625467380665!2d10.594935659802255!3d35.81642291211348!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x26a65273b05b6eff!2sNational+School+of+Engineers+of+Sousse!5e0!3m2!1sen!2stn!4v1519985503987"
+                    width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <a href="#" class="scrollpoint sp-effect3">
+                <img src="assets/img/freeze/iot.png" height="100" width="160" alt="" class="logo">
+            </a>
+            <div class="social">
+                <a href="https://www.facebook.com/enisoiotchallenge/" target="_blank" class="scrollpoint sp-effect3"><i
+                        class="fa fa-facebook fa-lg"></i></a>
+                <a href="https://www.youtube.com/channel/UCMfqYQwowPWyGoxg911AscA" target="_blank"
+                   class="scrollpoint sp-effect3"><i class="fa fa-youtube-play fa-lg"></i></a>
+                <a href="https://www.linkedin.com/groups/8586546" target="_blank" class="scrollpoint sp-effect3"><i
+                        class="fa fa-linkedin fa-lg"></i></a>
+            </div>
+            <div class="rights">
+                <p>Copyright 2019 &copy; ENISo IoT Challenge</p>
+
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="assets/js/jquery-1.11.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/slick.min.js"></script>
+<script src="assets/js/placeholdem.min.js"></script>
+<script src="assets/js/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+<script src="assets/js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script>
+    $(document).ready(function () {
+        appMaster.preLoader();
+
+        $("[rel='tooltip']").tooltip();
+
+        $('.thumbnail').hover(
+            function () {
+                $(this).find('.caption').slideDown(250); //.fadeIn(250)
+            },
+            function () {
+                $(this).find('.caption').slideUp(250); //.fadeOut(205)
+            }
+        );
+    });
+</script>
+<script>
+    function myFunction() {
+        alert("Sorry body, Application is closed!")
+    }
+</script>
+
+<script>
+    function getTimeRemaining(endtime) {
+        var t = Date.parse(endtime) - Date.parse(new Date());
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        return {
+            'total': t,
+            'days': days,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds
+        };
+    }
+
+    function initializeClock(id, endtime) {
+        var clock = document.getElementById(id);
+        var daysSpan = clock.querySelector('.days');
+        var hoursSpan = clock.querySelector('.hours');
+        var minutesSpan = clock.querySelector('.minutes');
+        var secondsSpan = clock.querySelector('.seconds');
+
+        function updateClock() {
+            var t = getTimeRemaining(endtime);
+
+            daysSpan.innerHTML = t.days;
+            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+            if (t.total <= 0) {
+                clearInterval(timeinterval);
+            }
+        }
+
+        updateClock();
+        var timeinterval = setInterval(updateClock, 1000);
+    }
+
+    // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+    var deadline = new Date("March 1, 2019 08:30:00");
+    initializeClock('clockdiv', deadline);
+
+</script>
+
+
+</body>
+
+</html>
